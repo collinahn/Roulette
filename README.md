@@ -23,14 +23,21 @@
 * cocos2d-x 3.17
 
 * Xcode libcocos iOS setting :
-
   * $(archs): arm64, x86_64
-  
-  * $(valid_archs): arm64 
+  * $(excluded_archs): arm64
+
+* Podfile setting(if x86_64 based library is used):
+```
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["ARCHS[sdk=iphoneossimulator*]"] = "x86_64"
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphoneossimulator*]"] = "arm64"
+    config.build_settings["ONLY_ACTIVE_ARCH"] = "YES"
+```
   
 
 ### Files
-In Roulette.cpp,
+* In Roulette.cpp,
 
 ```c++
     //1-2. 룰렛을 n등분으로 구분하는 기둥을 만들고 배치한다
@@ -62,6 +69,6 @@ In Roulette.cpp,
         i++;
     }
 ```
-once the number of pillar is given, each location and attribute is set automatically on each physical body. 
+* Once the number of pillar is given, location and attribute is set automatically on each physical body. 
 
-Then each collides with the pointer sprite, demonstrating natural reaction. 
+* Then each collides with the pointer sprite, demonstrating natural reaction. 
