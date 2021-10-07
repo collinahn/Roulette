@@ -9,7 +9,7 @@
 
 * Trial Video -> [Link](https://youtu.be/h7nct3X7VBU)
 
-* Details -> https://www.instagram.com/p/CUR277Cv8vm/?utm_source=ig_web_button_share_sheet
+* Details -> https://www.instagram.com/p/CUR277Cv8vm/
 
 ### Environment
 * M1 Mac mini, 8GB
